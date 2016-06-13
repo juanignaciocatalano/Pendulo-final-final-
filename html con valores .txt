@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendulo Balistico</title>
+
+    <link rel="stylesheet" href="index2.css" type="text/css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/Imagenes/favicom.jpg"/>
+
+    <script type="text/javascript" src="Funciones.js"></script>
+
+</head>
+<body>
+<div style="margin-top: 0.5cm" class="alineamiento" align="center">
+    <h1> Pendulo Balistico </h1>
+    </div>
+
+
+
+
+<!-- BOTON calcular -->
+<div style=" margin-top:350px;  margin-left: 447px; margin-right: auto;">
+    <a href="Formulas.html" class="boton">
+        <b class="a">
+            <b class="b"> <b> Formulas </b></b>
+        </b>
+    </a>
+</div>
+
+
+
+<br>
+ <div id="cajaBoton">
+    <div>
+        <a onclick="main()"; href="javascript:void(0);" class="boton">
+            <b class="a">
+                <b class="b"> <b> Calcular </b></b>
+            </b>
+        </a>
+    </div>
+ </div>
+</br>
+
+
+
+
+
+
+<br>
+<div id="caja1">
+    <h5> Que se quiere calcular:</h5>
+
+    <select id="options" name="Calcular">
+        <option value="...">...</option>
+        <option value="velocidad_bala">Velocidad Bala</option>
+        <option value="velocidad_bloque">Velocidad Bloque</option>
+        <option value="altura_bloque">Distancia altura Bloque</option>
+    </select>
+    <select name="Unidades">
+        <option value="Unidades">Unidades</option>
+        <option value="kg/m/s">kg/m/s</option>
+        <option value="g/km/h">g/km/h</option>
+    </select>
+</div>
+
+
+<div id="caja2">
+    <div id="datos">
+        <h2> Datos </h2>
+
+        <div>
+            Masa Bala
+        </div>
+        <input type="number" name="masa bala" id="masa_bala" min="1" class="miInput" placeholder="Masa de la bala">
+        <select name="Unidades">
+            <option value="g">g</option>
+            <option value="Kg">kg</option>
+        </select>
+        <br>
+
+        <br>
+        <div>
+            Masa Bloque
+        </div>
+        <input type="number" name="masa bloque" id="masa_bloque" min="1" class="miInput" placeholder="Masa de la bloque">
+        <select name="Unidades">
+            <option value="g">g</option>
+            <option value="Kg">kg</option>
+        </select>
+        <br>
+
+        <br>
+        <div>
+            Velocidad Bala
+        </div>
+        <input type="number" name="velocidad bala" id="velocidad_bala" min="1" class="miInput" placeholder="Velocidad de bala">
+        <select name="Unidades">
+            <option value="M/s">m/s</option>
+            <option value="Km/h">km/h</option>
+        </select>
+        <br>
+
+        <br>
+        <div>
+            Velocidad Bloque
+        </div>
+        <input type="number" name="velocidad bloque" id="velocidad_bloque" min="1" class="miInput" placeholder="Velocidad bloque">
+        <select name="Unidades">
+            <option value="M/s">m/s</option>
+            <option value="Km/h">km/h</option>
+        </select>
+        <br>
+
+        <br>
+        <div>
+            Distacia altura Bloque
+        </div>
+        <input type="number" name="distancia altura bloque" id="altura_bloque" min="1" class="miInput" placeholder="Distancia altura bloque">
+        <select name="Unidades">
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="m">m</option>
+        </select>
+    </div>
+  </div>
+
+
+<div id="caja3">
+    <h2> Resultados </h2>
+    <div>
+        Velocidad Bala
+    </div>
+    <input type="number" name="resultado" min="1">
+    <br>
+    <br>
+    <div>
+        Velocidad Bloque
+    </div>
+    <input type="number" name="resultado" min="1">
+    <br>
+    <br>
+    <div>
+        Distancia altura Bloque
+    </div>
+
+    <input type="number" name="resultado" min="1">
+
+    </select>
+    <br>
+</div>
+
+
+
+<div id="cajaBoton2">
+    <div>
+        <a href="#" class="boton">
+            <b class="a">
+                <b class="b"> <b> Restablecer </b></b>
+            </b>
+        </a>
+    </div>
+</div>
+</br>
+
+
+<div style="margin-top: 150px; margin-left:auto " >
+    <b>Contador de Visitas</b>
+
+    <a target="_blank"><img src="http://www.reliablecounter.com/count.php?page=Pendulo Balistico&digit=style/plain/1/&reloads=0" alt="" title="" border="0"></a><br/><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"a>
+   </a>
+
+
+    <p> Pendulo Balistico</p>
+
+
+       <p> Desarolladores: Juan Cattaneo y Juan Catalano </p>
+
+        <p>Copyright(C) Todos los derechos reservados.</p>
+    </div>
+
+
+</body>
+</html>
