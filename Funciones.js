@@ -81,7 +81,7 @@ function dibujar(){
     ctx.lineTo(centerX-largoCubo/4,largoCable+10);
 
     //Cable Derecho
-    ctx.moveTo(centerX-largoCubo/10,4);
+    ctx.moveTo(centerX-largoCubo/11,4);
     ctx.lineTo(centerX-largoCubo/10,largoCable+10);
 
     //Cubo
