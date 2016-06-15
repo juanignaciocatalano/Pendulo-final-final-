@@ -64,9 +64,12 @@ function dibujar(){
     var largoCable = 50;
     var largoCubo = 60;
 
+
     ctx.beginPath();
     ctx.moveTo(centerX-anchoTecho,10);
     ctx.lineTo(centerX+anchoTecho,10);
+
+    
 
     //Dibujar lineas paralelas inclinadas del techo
     for(var i=0; i< anchoTecho*2;){
@@ -81,8 +84,8 @@ function dibujar(){
     ctx.lineTo(centerX-largoCubo/4,largoCable+10);
 
     //Cable Derecho
-    ctx.moveTo(centerX-largoCubo/11,4);
-    ctx.lineTo(centerX-largoCubo/10,largoCable+10);
+    ctx.moveTo(centerX+largoCubo/11000000,4);
+    ctx.lineTo(centerX+largoCubo/10000000,largoCable+10);
 
     //Cubo
     ctx.fillRect(centerX-largoCubo/2,largoCable+10,largoCubo,largoCubo*2/3); //(X,y,largo, ancho)
