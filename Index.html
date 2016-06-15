@@ -14,9 +14,7 @@
 <body>
 <div style="margin-top: 0.5cm" class="alineamiento" align="center">
     <h1> Pendulo Balistico </h1>
-    </div>
-
-
+</div>
 
 
 <!-- BOTON calcular -->
@@ -29,22 +27,17 @@
 </div>
 
 
-
 <br>
- <div id="cajaBoton">
+<div id="cajaBoton">
     <div>
-        <a onclick="main()"; href="javascript:void(0);" class="boton">
+        <a onclick="main(); dibujar()"  href="javascript:void(0);" class="boton">
             <b class="a">
                 <b class="b"> <b> Calcular </b></b>
             </b>
         </a>
     </div>
- </div>
+</div>
 </br>
-
-
-
-
 
 
 <br>
@@ -73,14 +66,16 @@
         <div>
             Masa Bloque
         </div>
-        <input type="number" name="masa bloque" id="masa_bloque" min="1" class="miInput" placeholder="Masa de la bloque">
+        <input type="number" name="masa bloque" id="masa_bloque" min="1" class="miInput"
+               placeholder="Masa de la bloque">
         <br>
 
         <br>
         <div>
             Velocidad Bala
         </div>
-        <input type="number" name="velocidad bala" id="velocidad_bala1" min="1" class="miInput" placeholder="Velocidad de bala">
+        <input type="number" name="velocidad bala" id="velocidad_bala1" min="1" class="miInput"
+               placeholder="Velocidad de bala">
 
 
         <br>
@@ -89,17 +84,19 @@
         <div>
             Velocidad Bloque
         </div>
-        <input type="number" name="velocidad bloque" id="velocidad_bloque1" min="1" class="miInput" placeholder="Velocidad bloque">
+        <input type="number" name="velocidad bloque" id="velocidad_bloque1" min="1" class="miInput"
+               placeholder="Velocidad bloque">
         <br>
 
         <br>
         <div>
             Distacia altura Bloque
         </div>
-        <input type="number" name="distancia altura bloque" id="altura_bloque1" min="1" class="miInput" placeholder="Distancia altura bloque">
+        <input type="number" name="distancia altura bloque" id="altura_bloque1" min="1" class="miInput"
+               placeholder="Distancia altura bloque">
 
     </div>
-  </div>
+</div>
 
 
 <div id="caja3">
@@ -127,7 +124,6 @@
 </div>
 
 
-
 <div id="cajaBoton2">
     <div>
         <a href="Index.html" class="boton">
@@ -139,21 +135,29 @@
 </div>
 </br>
 
+<div class="canvasDiv">
+    <canvas id="canvas" width="550" height="250">
+    </canvas>
+</div>
 
-<div style="margin-top: 150px; margin-left:auto " >
+<div style="margin-top: 150px; margin-left:auto ">
     <b>Contador de Visitas</b>
 
-    <a target="_blank"><img src="http://www.reliablecounter.com/count.php?page=Pendulo Balistico&digit=style/plain/1/&reloads=0" alt="" title="" border="0"></a><br/><a href="http://www.fabbly.com" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"a>
-   </a>
+    <a target="_blank"><img
+            src="http://www.reliablecounter.com/count.php?page=Pendulo Balistico&digit=style/plain/1/&reloads=0" alt=""
+            title="" border="0"></a><br/><a href="http://www.fabbly.com" target="_blank"
+                                            style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"
+                                            a>
+</a>
 
 
     <p> Pendulo Balistico</p>
 
 
-       <p> Desarolladores: Juan Cattaneo y Juan Catalano </p>
+    <p> Desarolladores: Juan Cattaneo y Juan Catalano </p>
 
-        <p>Copyright(C) Todos los derechos reservados.</p>
-    </div>
+    <p>Copyright(C) Todos los derechos reservados.</p>
+</div>
 
 
 </body>

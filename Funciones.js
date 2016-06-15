@@ -54,6 +54,38 @@ function main() {
         document.getElementById('resultadoAltBloque').value = result;
         alert(result);
     }
+}
+
+function dibujar(){
+    var myCanvas = document.getElementById("canvas");
+    var ctx = myCanvas.getContext("2d");
+    var centerX = myCanvas.width / 2;
+    var anchoTecho = 80;
+    var largoCable = 50;
+    var largoCubo = 60;
+
+    ctx.beginPath();
+    ctx.moveTo(centerX-anchoTecho,10);
+    ctx.lineTo(centerX+anchoTecho,10);
+
+    //Dibujar lineas paralelas inclinadas del techo
+    for(var i=0; i< anchoTecho*2;){
+        ctx.moveTo(centerX-anchoTecho+i,0);
+        i=i+10;
+        ctx.lineTo(centerX-anchoTecho+i,10);
+        ctx.stroke()
+    }
+
+    //Cable Izquierdo
+    ctx.moveTo(centerX-largoCubo/4,10);
+    ctx.lineTo(centerX-largoCubo/4,largoCable+10);
+
+    //Cable Derecho
+    
+
+    //Cubo
+    ctx.fillRect(centerX-largoCubo/2,largoCable+10,largoCubo,largoCubo*2/3); //(X,y,largo, ancho)
 
 
+    ctx.stroke()
 }
