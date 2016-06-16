@@ -148,3 +148,15 @@ h5{
     margin: auto;
     margin-top: 126px;
 }
+
+.canvasDiv{
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: rgba(247, 249, 249, 0.62);
+    align-content: flex-start;
+    height: 16em;
+    width: 31em;
+    margin-left: 550px;
+    margin-right: auto;
+    margin-top: -131px;
+}
