@@ -4,7 +4,7 @@
  */
 g = 9.81
 
-function main() {
+function main() {                         //corrovoramos la opcion que ingresa el usuario sobre que desea calcular
     var input = document.getElementById('options'),
         option = input.value;
 
@@ -19,7 +19,7 @@ function main() {
         altura_bloque();
     }
 
-    function velocidad_bala() {
+    function velocidad_bala() {                             //esta funcion calcula la velocidad de la bala 
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
         var input = document.getElementById('masa_bloque'),
@@ -31,7 +31,7 @@ function main() {
         alert(result);
     }
 
-    function velocidad_bloque() {
+    function velocidad_bloque() {                        //esta funcion calcula la velocidad del bloque 
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
         var input = document.getElementById('masa_bloque'),
@@ -43,7 +43,7 @@ function main() {
         alert(result);
     }
 
-    function altura_bloque() {
+    function altura_bloque() {                              //esta funcion calcula la altura del bloque
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
         var input = document.getElementById('masa_bloque'),
@@ -56,13 +56,13 @@ function main() {
     }
 }
 
-function dibujar(){
+function dibujar(){                                        //se inicia el canvas
     var myCanvas = document.getElementById("canvas");
     var ctx = myCanvas.getContext("2d");
     var centerX = myCanvas.width / 2;
-    var anchoTecho = 80;
-    var largoCable = 50;
-    var largoCubo = 60;
+    var anchoTecho = 120;
+    var largoCable = 90;
+    var largoCubo = 100;
 
 
     ctx.beginPath();
@@ -84,12 +84,31 @@ function dibujar(){
     ctx.lineTo(centerX-largoCubo/4,largoCable+10);
 
     //Cable Derecho
-    ctx.moveTo(centerX+largoCubo/11000000,4);
-    ctx.lineTo(centerX+largoCubo/10000000,largoCable+10);
+    ctx.moveTo(centerX+largoCubo/1100000,10);
+    ctx.lineTo(centerX+largoCubo/1000000,largoCable+10);
 
     //Cubo
     ctx.fillRect(centerX-largoCubo/2,largoCable+10,largoCubo,largoCubo*2/3); //(X,y,largo, ancho)
-
-
     ctx.stroke()
+
+
+    //bala
+    
+    ctx.moveTo(60,130)
+    ctx.lineTo(60,150)
+    ctx.stroke()
+
+    ctx.moveTo(60,130)
+    ctx.lineTo(90,140)
+    ctx.stroke()
+
+    ctx.moveTo(60,150)
+    ctx.lineTo(90,140)
+    ctx.stroke()
+
+
+
+
+
+
 }
