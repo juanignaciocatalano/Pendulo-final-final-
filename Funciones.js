@@ -4,6 +4,9 @@
  */
 g = 9.81
 
+var input = document.getElementById('masa_bloque'),
+    m2 = Number(input.value);
+
 function main() {                         //corrovoramos la opcion que ingresa el usuario sobre que desea calcular
     var input = document.getElementById('options'),
         option = input.value;
@@ -19,43 +22,59 @@ function main() {                         //corrovoramos la opcion que ingresa e
         altura_bloque();
     }
 
-    function velocidad_bala() {                             //esta funcion calcula la velocidad de la bala 
+    function velocidad_bala() {                             //esta funcion calcula la velocidad de la bala
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
-        var input = document.getElementById('masa_bloque'),
-            m2 = Number(input.value);
         var input = document.getElementById('altura_bloque1'),
             h = Number(input.value);
-        var result = Math.pow(2 * Math.pow((m1 + m2, 2)*g*h / Math.pow(m1, 2), 2), 0.5);
-        document.getElementById('resultadoVelBala').value = result;
-        alert(result);
+        var input = document.getElementById('masa_bloque'),
+            m2 = Number(input.value);
+        if (m2 < 0 || h < 0 || m1 < 0) {                                      //corrovora que los datos sean mayores a 0
+            alert(" Corrovore que los datos requeridos sean  MAYORES a 0");
+        }
+        else {
+            var result = Math.pow(2 * Math.pow((m1 + m2, 2) * g * h / Math.pow(m1, 2), 2), 0.5);
+            document.getElementById('resultadoVelBala').value = result;
+            alert(result);
+        }
     }
-
     function velocidad_bloque() {                        //esta funcion calcula la velocidad del bloque 
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
-        var input = document.getElementById('masa_bloque'),
-            m2 = Number(input.value);
         var input = document.getElementById('velocidad_bala1'),
             velocidad_bala = Number(input.value);
-        var result = Math.pow((Math.pow((m1 * velocidad_bala), 2) / (m1 + m2)), 0.5);
-        document.getElementById('resultadoVelBloque').value = result;
-        alert(result);
+        var input = document.getElementById('masa_bloque'),
+            m2 = Number(input.value);
+        if (m2 < 0 || m1 < 0 || velocidad_bala <0  ) {
+            alert(" Corrovore que los datos requeridos sean  MAYORES a 0");
+        }
+        else {
+            var result = Math.pow((Math.pow((m1 * velocidad_bala), 2) / (m1 + m2)), 0.5);
+            document.getElementById('resultadoVelBloque').value = result;
+            alert(result);
+        }
     }
-
     function altura_bloque() {                              //esta funcion calcula la altura del bloque
         var input = document.getElementById('masa_bala'),
             m1 = Number(input.value);
-        var input = document.getElementById('masa_bloque'),
-            m2 = Number(input.value);
         var input = document.getElementById('velocidad_bala1'),
             velocidad_bala = Number(input.value);
-        var result = Math.pow(velocidad_bala, 2) * Math.pow(m1, 2) / (g*2*Math.pow(m1+m2, 2));
-        document.getElementById('resultadoAltBloque').value = result;
-        alert(result);
+        var input = document.getElementById('masa_bloque'),
+            m2 = Number(input.value);
+        if (m2 < 0 || m1 < 0 || velocidad_bala <0) {
+            alert(" Corrovore que los datos requeridos sean  MAYORES a 0");
+        }
+        else {
+            var result = Math.pow(velocidad_bala, 2) * Math.pow(m1, 2) / (g * 2 * Math.pow(m1 + m2, 2));
+            document.getElementById('resultadoAltBloque').value = result;
+            alert(result);
+        }
     }
 }
 
+
+
+    
 function dibujar(){                                        //se inicia el canvas
     var myCanvas = document.getElementById("canvas");
     var ctx = myCanvas.getContext("2d");
