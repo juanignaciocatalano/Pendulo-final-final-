@@ -3,6 +3,8 @@
  * Created by juanchi on 12/5/2016.
  */
 g = 9.81
+var animate ;
+var bala = new Image();
 
 var input = document.getElementById('masa_bloque'),
     m2 = Number(input.value);
@@ -74,8 +76,45 @@ function main() {                         //corrovoramos la opcion que ingresa e
 
 
 
+
+
     
+
+function dibujar() {
+    window.requestAnimFrame = (function () {
+        return window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 1000 / 60);
+            };
+    })();
+
+    var x = 0;
+
+    function drawIt() {
+        window.requestAnimFrame(drawIt);
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+        canvas.width = canvas.width;
+        c.moveTo(x, 130)
+        c.lineTo(x, 150)
+        c.lineTo(x + 30, 140)
+        c.lineTo(x, 130)
+        c.stroke()
+        x += 5;
+
+    }
+
+    window.requestAnimFrame(drawIt);
+}
+/*
+
+var x =0
 function dibujar(){                                        //se inicia el canvas
+
     var myCanvas = document.getElementById("canvas");
     var ctx = myCanvas.getContext("2d");
     var centerX = myCanvas.width / 2;
@@ -109,25 +148,5 @@ function dibujar(){                                        //se inicia el canvas
     //Cubo
     ctx.fillRect(centerX-largoCubo/2,largoCable+10,largoCubo,largoCubo*2/3); //(X,y,largo, ancho)
     ctx.stroke()
-
-
-    //bala
-    
-    ctx.moveTo(60,130)
-    ctx.lineTo(60,150)
-    ctx.stroke()
-
-    ctx.moveTo(60,130)
-    ctx.lineTo(90,140)
-    ctx.stroke()
-
-    ctx.moveTo(60,150)
-    ctx.lineTo(90,140)
-    ctx.stroke()
-
-
-
-
-
-
 }
+    */
