@@ -73,15 +73,14 @@ function main() {                         //corrovoramos la opcion que ingresa e
         }
     }
 }
+function dibujar() {  // se arranca con el canvas 
 
-
-
-
-
-    
-
-function dibujar() {
-    window.requestAnimFrame = (function () {
+    var x = 0; // se inicias las variables a utilizar
+    var y = 0;
+    var T = 0;
+    var a = 0;
+    var b = 0;
+    window.requestAnimFrame = (function () {  // funcion que se encarga de recargar canvas 
         return window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame ||
@@ -91,62 +90,60 @@ function dibujar() {
                 window.setTimeout(callback, 1000 / 60);
             };
     })();
+        function drawIt() {                                 // si unicia el dibujo 
+            window.requestAnimFrame(drawIt);
+            var canvas = document.getElementById('canvas');
+            var c = canvas.getContext('2d');
+            canvas.width = canvas.width;
 
-    var x = 0;
+             if (T<350) {                                 //condicones  para la animacion conjunta 
+                 x+=10
+             }
+            if (T>250) {
+                y=-10
+            }
+            //bala
+            c.moveTo(x, y +130)
+            c.lineTo(x,y+ 150)
+            c.lineTo(x + 30, y+140)
+            c.lineTo(x,y+ 130)
+            c.stroke()
 
-    function drawIt() {
-        window.requestAnimFrame(drawIt);
-        var canvas = document.getElementById('canvas');
-        var c = canvas.getContext('2d');
-        canvas.width = canvas.width;
-        c.moveTo(x, 130)
-        c.lineTo(x, 150)
-        c.lineTo(x + 30, 140)
-        c.lineTo(x, 130)
-        c.stroke()
-        x += 5;
+            //bloque
+            c.fillRect(a + 250, b + 100, 150, 80, 50)
+            c.stroke()
+            if (T > 260 && T<600) {
+                a += 1;
+                b += -1;
+            }
 
+            //cable1
+            c.moveTo(300, 0);
+            c.lineTo(a + 300, b + 100);
+            c.stroke()
+
+            //cable2
+            c.moveTo(350, 0);
+            c.lineTo(a + 350, b + 100);
+            c.stroke()
+
+            // escala x
+            c.moveTo(0, 240);
+            c.lineTo(480,240);
+            c.moveTo(a+250, 235);
+            c.lineTo(a + 250,245);
+            c.stroke()
+
+            // escala y
+            c.moveTo(480,0);
+            c.lineTo(480,240);
+            c.moveTo(475,b + 100);
+            c.lineTo(485,b + 100);
+            c.stroke()
+
+            T += 10;                                         // parametro comun de referencia 
     }
+           window.requestAnimFrame(drawIt);
 
-    window.requestAnimFrame(drawIt);
 }
-/*
 
-var x =0
-function dibujar(){                                        //se inicia el canvas
-
-    var myCanvas = document.getElementById("canvas");
-    var ctx = myCanvas.getContext("2d");
-    var centerX = myCanvas.width / 2;
-    var anchoTecho = 120;
-    var largoCable = 90;
-    var largoCubo = 100;
-
-
-    ctx.beginPath();
-    ctx.moveTo(centerX-anchoTecho,10);
-    ctx.lineTo(centerX+anchoTecho,10);
-
-    
-
-    //Dibujar lineas paralelas inclinadas del techo
-    for(var i=0; i< anchoTecho*2;){
-        ctx.moveTo(centerX-anchoTecho+i,0);
-        i=i+10;
-        ctx.lineTo(centerX-anchoTecho+i,10);
-        ctx.stroke()
-    }
-
-    //Cable Izquierdo
-    ctx.moveTo(centerX-largoCubo/4,10);
-    ctx.lineTo(centerX-largoCubo/4,largoCable+10);
-
-    //Cable Derecho
-    ctx.moveTo(centerX+largoCubo/1100000,10);
-    ctx.lineTo(centerX+largoCubo/1000000,largoCable+10);
-
-    //Cubo
-    ctx.fillRect(centerX-largoCubo/2,largoCable+10,largoCubo,largoCubo*2/3); //(X,y,largo, ancho)
-    ctx.stroke()
-}
-    */
