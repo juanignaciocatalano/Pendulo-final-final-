@@ -9,7 +9,7 @@ var bala = new Image();
 var input = document.getElementById('masa_bloque'),
     m2 = Number(input.value);
 
-function main() {                         //corrovoramos la opcion que ingresa el usuario sobre que desea calcular
+function main() {                         //corroboramos la opcion que ingresa el usuario sobre que desea calcular
     var input = document.getElementById('options'),
         option = input.value;
 
@@ -17,6 +17,7 @@ function main() {                         //corrovoramos la opcion que ingresa e
         velocidad_bloque();
     }
     if (option == "velocidad_bala"){
+        
         velocidad_bala();
     }
 
@@ -31,12 +32,12 @@ function main() {                         //corrovoramos la opcion que ingresa e
             h = Number(input.value);
         var input = document.getElementById('masa_bloque'),
             m2 = Number(input.value);
-        if (m2 < 0 || h < 0 || m1 < 0) {                                      //corrovora que los datos sean mayores a 0
-            alert(" Corrovore que los datos requeridos sean  MAYORES a 0");
+        if (m2 < 0 || h < 0 || m1 < 0) {                                      //corrobora que los datos sean mayores a 0
+            alert(" Corrobore que los datos requeridos sean  MAYORES a 0");
         }
         else {
             var result = Math.pow(2 * Math.pow((m1 + m2, 2) * g * h / Math.pow(m1, 2), 2), 0.5);
-            document.getElementById('resultadoVelBala').value = result;
+            document.getElementById('resultadoVelBala').value = result.toFixed(2);
             alert(result);
         }
     }
@@ -52,7 +53,7 @@ function main() {                         //corrovoramos la opcion que ingresa e
         }
         else {
             var result = Math.pow((Math.pow((m1 * velocidad_bala), 2) / (m1 + m2)), 0.5);
-            document.getElementById('resultadoVelBloque').value = result;
+            document.getElementById('resultadoVelBloque').value = result.toFixed(2);
             alert(result);
         }
     }
@@ -68,7 +69,7 @@ function main() {                         //corrovoramos la opcion que ingresa e
         }
         else {
             var result = Math.pow(velocidad_bala, 2) * Math.pow(m1, 2) / (g * 2 * Math.pow(m1 + m2, 2));
-            document.getElementById('resultadoAltBloque').value = result;
+            document.getElementById('resultadoAltBloque').value = result.toFixed(2);
             alert(result);
         }
     }
