@@ -69,7 +69,7 @@ function main() {                         //corroboramos la opcion que ingresa e
         }
         else {
             var result = Math.pow(velocidad_bala, 2) * Math.pow(m1, 2) / (g * 2 * Math.pow(m1 + m2, 2));
-            document.getElementById('resultadoAltBloque').value = result.toFixed(2);
+            document.getElementById('resultadoAltBloque').value = result.toFixed(3);
             alert(result);
         }
     }
@@ -147,4 +147,33 @@ function dibujar() {  // se arranca con el canvas
            window.requestAnimFrame(drawIt);
 
 }
+function selectorCalculo(valor){
+    if(valor=="velocidad_bala") {
+        document.getElementById("velocidad_bala1").disabled = true;
+    }
+    else{
+        document.getElementById("velocidad_bala1").disabled = false;
+    }
+
+    if(valor=="altura_bloque") {
+        document.getElementById("altura_bloque1").disabled = true;
+    }
+    else{
+        document.getElementById("altura_bloque1").disabled = false;
+    }
+
+    if(valor=="velocidad_bloque") {
+        document.getElementById("altura_bloque1").disabled = true;
+    }
+    else{
+        document.getElementById("altura_bloque1").disabled = false;
+    }
+
+
+}
+
+
+
+
+
 

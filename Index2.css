@@ -160,3 +160,16 @@ h5{
     margin-right: auto;
     margin-top: -131px;
 }
+
+h6{
+
+    color:#000080;
+    background: #AED6F1;
+    font-weight:bold;
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:10px;
+    padding-bottom:10px;
+    font-size:15px;
+    text-align:center;
+}
